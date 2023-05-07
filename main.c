@@ -162,7 +162,7 @@ static void display(struct tpacket3_hdr *ppd) {
     getnameinfo((struct sockaddr *)&sd, sizeof(sd), dbuff, sizeof(dbuff), NULL,
                 0, NI_NUMERICHOST);
 
-    printf("%s -> %s, ", sbuff, dbuff);
+    printf("%s -> %s, protocol: %d, ", sbuff, dbuff, ip->protocol);
   }
 
   printf("rxhash: 0x%x\n", ppd->hv1.tp_rxhash);
